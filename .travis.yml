@@ -14,7 +14,7 @@ after_success:
   - docker build -t leiw/multi-server ./server
   - docker build -t leiw/multi-worker ./worker
 # login to the docker CLI
-  - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 # take images and push to docker hub
   - docker push leiw/multi-client
   - docker push leiw/multi-nginx
