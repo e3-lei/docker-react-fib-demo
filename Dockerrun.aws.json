@@ -5,24 +5,28 @@
             "name": "client",
             "image": "leiw/multi-demo-client",
             "hostname": "client",
+            "memory": 128,
             "essential": false
         },
         {
             "name": "server",
             "image": "leiw/multi-demo-server",
             "hostname": "api",
+            "memory": 128,
             "essential": false
         },
         {
             "name": "worker",
             "image": "leiw/multi-demo-worker",
             "hostname": "worker",
+            "memory": 128,
             "essential": false
         },
         {
             "name": "nginx",
             "image": "leiw/multi-demo-nginx",
             "hostname": "nginx",
+            "memory": 128,
             "essential": true,
             "portMappings": [
                 {
