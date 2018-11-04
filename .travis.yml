@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t leiw/react-fib-demo -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run leiw/react-fib-demo npm test -- --coverage
+
+after_success:
+  - docker build -t leiw/multi-client ./client
+  - docker build -t leiw/multi-nginx ./nginx
+  - docker build -t leiw/multi-server ./server
+  - docker build -t leiw/multi-worker ./worker
+# login to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+# take images and push to docker hub
+  - docker push leiw/multi-client
+  - docker push leiw/multi-nginx
+  - docker push leiw/multi-server
+  - docker push leiw/multi-worker
