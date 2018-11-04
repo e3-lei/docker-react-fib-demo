@@ -7,3 +7,4 @@
 * EC Redis
 * Security Group to Resources
 * EB Env Param
+* IAM Users
