@@ -22,10 +22,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: "eu-central-1"
-  app: "docker-demo-fib"
-  env: "DockerDemoFib-env"
+  app: "docker-react-fib-demo"
+  env: "DockerReactFibDemo-env"
   bucket_name: "elasticbeanstalk-eu-central-1-179064999225"
-  bucket_path: "docker-demo-fib"
+  bucket_path: "docker-react-fib-demo"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
