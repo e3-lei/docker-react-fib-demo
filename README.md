@@ -1,6 +1,6 @@
 # multi container fib demo
 
-## AWS
+## AWS Resources
 
 * EB multi-container
 * RDS Postgres
